@@ -28,9 +28,12 @@ const letterPositions = function(string) {
         results[string[i]] = [i];
       }
     }
-    console.log(results)
+    
   }
+  return results;
 
 };
 
-letterPositions("hello world");
+const result = letterPositions("hello world");
+assertArraysEqual(result['h'], [0]);
+assertArraysEqual(result['l'], [2,3,9]);
