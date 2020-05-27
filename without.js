@@ -25,6 +25,8 @@ const without = function(sourceArry,itemsToRemove) {
   } else {
     let outArry = [];
     for (let element of sourceArry) {
+      /* if current element of sourceArry is
+      not in itemsTOREmove array, then add it to output array */
       if (!itemsToRemove.includes(element)) {
         outArry.push(element);
       }
