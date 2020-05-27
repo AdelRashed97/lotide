@@ -26,7 +26,7 @@ const assertEqual = function(actual,expected) {
 
 const eqObjects = function(obj1,obj2) {
   // Compares if two objects are equal and return boolean.
-  // Objects are equal if they same keys and values.
+  // Objects are equal if they same keys and values. Values are either primitives or arrays
 
   // test if both objects have the same number of keys and same key name
 
@@ -35,16 +35,33 @@ const eqObjects = function(obj1,obj2) {
 
   // test for number of keys
   if (keys1.length !== keys2.length) {
-    console.log('lenght');
+    
     return false;
   }
   // Now test if both objects have the same key names
   for (let key of keys1) {
     if (! keys2.includes(key)) {
-      console.log('names');
+      
       return false;
     }
   }
+
+  // test if the value for each key in one object is the same as the value for that same key in the other object
+
+  for (let key of keys1) {
+    if (obj1[key] !== obj2[key]) {
+      return false;
+
+    }
+
+    
+
+  }
+
+  return true;
+
+
+
 
 };
 
@@ -52,8 +69,12 @@ const eqObjects = function(obj1,obj2) {
 // test case
 // test 1: test if both objects have same number of keys and key names;
 const ab = { a: "1", b: "2" };
-const ba = { c: "2" , a: "1" };
+const ba = { b: "2" , a: "1" };
 assertEqual(eqObjects(ab, ba),true); // => true
 
+const ac = { a: "1", c: "2" };
+const ca = { c: "4" , a: "1" };
+assertEqual(eqObjects(ac, ca),true); // => false
+
 const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(abc, ab),false); // => true
+assertEqual(eqObjects(abc, ab),false); // => false
