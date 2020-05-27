@@ -8,6 +8,16 @@ const assertEqual = function(actual,expected) {
 
 const countOnly = function(allItems,itemsToCount) {
   const results = {};
+  for (item of allItems) {
+    if (itemsToCount[item]) {
+      if (results[item]) {
+        results[item] += 1;
+      } else {
+        // 
+        results[item] = 1;
+      }
+    }
+  }
   
 
 
@@ -32,7 +42,7 @@ const firstNames = [
 ];
 
 const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true });
-const result2 = countOnly(firstNames, { "Jason": true, "Karima": false, "Fang": true });
+const result2 = countOnly(firstNames, { "Jason": true, "Karima": false, "Fang": false });
 
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
