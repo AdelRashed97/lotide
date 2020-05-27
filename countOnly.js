@@ -5,3 +5,39 @@ const assertEqual = function(actual,expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
+
+const countOnly = function(allItems,itemsToCount) {
+  const results = {};
+  const counter = [];
+  for(let itemToCount in itemsToCount) {
+    if (itemsToCount[itemToCount] === true) {
+      counter.push(itemToCount);
+    }
+    
+  }
+  console.log(counter);
+  return results;
+
+};
+
+
+
+// test cases
+const firstNames = [
+  "Karl",
+  "Salima",
+  "Agouhanna",
+  "Fang",
+  "Kavith",
+  "Jason",
+  "Salima",
+  "Fang",
+  "Joe"
+];
+
+const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true });
+const result2 = countOnly(firstNames, { "Jason": true, "Karima": false, "Fang": true });
+
+assertEqual(result1["Jason"], 1);
+assertEqual(result1["Karima"], undefined);
+assertEqual(result1["Fang"], 2);
