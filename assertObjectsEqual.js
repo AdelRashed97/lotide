@@ -1,3 +1,23 @@
+const eqArrays = function(arry1,arry2) {
+  // if arrays are of different length, return false
+  if (arry1.length !== arry2.length) {
+    return false;
+  } else {
+    for (let i = 0; i < arry1.length; i++) {
+      // return false if  both arrays differ by an element
+      if (arry1[i] !== arry2[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+};
+
+
+
+
+
+
 const eqObjects = function(obj1,obj2) {
   // Compares if two objects are equal and return boolean.
   // Objects are equal if they same keys and values. Values are either primitives or arrays
@@ -50,14 +70,14 @@ const eqObjects = function(obj1,obj2) {
 
 
 
-const assertObjectsEqual = function (obj1,obj2) {
+const assertObjectsEqual = function(obj1,obj2) {
   const inspect = require('util').inspect;
 
   const result = eqObjects(obj1,obj2);
   result ? console.log(`✅✅✅ Assertion Passed: ${inspect(obj1)} === ${inspect(obj2)}`) : console.log(`🛑🛑🛑 Assertion Failed: ${inspect(obj1)} !== ${inspect(obj2)}`);
   
   
-}
+};
 
 
 // test case
@@ -74,4 +94,14 @@ const abc = { a: "1", b: "2", c: "3" };
 assertObjectsEqual(ab,abc); // => false
 
 
+// test 2: test for array values;
 
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+assertObjectsEqual(cd, dc); // => true
+
+const dc2 = { d: ["5", 3], c: "1" };
+assertObjectsEqual(cd, dc2); // => false
+
+const cd3 = { d: "1", c: ["2", 3, 4] };
+assertObjectsEqual(cd, cd3); // => false
