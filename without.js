@@ -15,7 +15,8 @@ const eqArrays = function(arry1,arry2) {
 
 const assertArraysEqual = function(arry1,arry2) {
   const result = eqArrays(arry1,arry2);
-  result ? console.log(`✅✅✅ Assertion Passed: ${arry1} === ${arry2}`) : console.log('🛑🛑🛑 Assertion Failed: ${arry1} !== ${arry2}');
+  result ? console.log(`✅✅✅ Assertion Passed: [${arry1}] === [${arry2}]`) : console.log(`🛑🛑🛑 Assertion Failed: 
+  [${arry1}] !== [${arry2}]`);
 };
 
 const without = function(sourceArry,itemsToRemove) {
@@ -37,8 +38,8 @@ const without = function(sourceArry,itemsToRemove) {
 };
 // test case
 assertArraysEqual(without([1, 2, 3],[]), [1, 2, 3]); // => should PASS
-assertArraysEqual(without([1, 2, 3],[2]) ,[1, 2, 3]); // => should PASS
-assertArraysEqual(without([1, 2, 3],[2,3]), [1, 2, 3]); // => should PASS
+assertArraysEqual(without([1, 2, 3],[2]) ,[1, 3]); // => should pass
+assertArraysEqual(without([1, 2, 3],[2,3]), [1]); // => should PASS
 
 let numbers = [1,2,3,9,8,9,2,9,1];
 let numbers2 = without(numbers,[1,2,9]);
