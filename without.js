@@ -15,7 +15,7 @@ const eqArrays = function(arry1,arry2) {
 
 const assertArraysEqual = function(arry1,arry2) {
   const result = eqArrays(arry1,arry2);
-  result ? console.log('✅✅✅ Assertion Passed: Arrays are Equal') : console.log('🛑🛑🛑 Assertion Failed: Arrays are NOT equal');
+  result ? console.log(`✅✅✅ Assertion Passed: ${arry1} === ${arry2}`) : console.log('🛑🛑🛑 Assertion Failed: ${arry1} !== ${arry2}');
 };
 
 const without = function(sourceArry,itemsToRemove) {
