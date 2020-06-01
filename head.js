@@ -9,3 +9,4 @@ const head = function(arry) {
 
 };
 
+module.exports = head;
