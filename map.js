@@ -29,9 +29,9 @@ const map = function(array,callBack) {
   return mapArray;
 };
 
+module.exports = map;
 
-
-assertArraysEqual(map([2,3,4,5],x => x + 2),[4,5,6,7]);
-assertArraysEqual(map([2,3,4,5],x => x ** 2),[4,9,16,25]);
-assertArraysEqual(map(["sam","jack","bob","charles"],x => "hello " + x),["hello sam","hello jack","hello bob","hello charles"]);
-console.log(map(["sam","jack","bob","charles"],x => "hello " + x));
+// assertArraysEqual(map([2,3,4,5],x => x + 2),[4,5,6,7]);
+// assertArraysEqual(map([2,3,4,5],x => x ** 2),[4,9,16,25]);
+// assertArraysEqual(map(["sam","jack","bob","charles"],x => "hello " + x),["hello sam","hello jack","hello bob","hello charles"]);
+// console.log(map(["sam","jack","bob","charles"],x => "hello " + x));

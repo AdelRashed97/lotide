@@ -1,24 +1,3 @@
-const eqArrays = function(arry1,arry2) {
-  // if arrays are of different length, return false
-  if (arry1.length !== arry2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arry1.length; i++) {
-      // return false if  both arrays differ by an element
-      if (arry1[i] !== arry2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
-
-const assertArraysEqual = function(arry1,arry2) {
-  const result = eqArrays(arry1,arry2);
-  result ? console.log(`✅✅✅ Assertion Passed: [${arry1}] === [${arry2}]`) : console.log(`🛑🛑🛑 Assertion Failed: 
-  [${arry1}] !== [${arry2}]`);
-};
-
 
 const middle = function(arry) {
   const arryLen = arry.length;// calaculates array length
@@ -36,14 +15,7 @@ const middle = function(arry) {
   }
 
 };
-// test cases
-assertArraysEqual(middle([1]) , []);
-assertArraysEqual(middle([1,2]) , []);
-assertArraysEqual(middle([1,2,3]) , [2]);
-assertArraysEqual(middle([1,2,3,4]) , [2,3]);
 
-assertArraysEqual(middle(['bob']) , []);
-assertArraysEqual(middle(['bob','jack']) , []);
-assertArraysEqual(middle(['bob','jack','sam']) , ['jack']);
-assertArraysEqual(middle(['bob','jack','sam','mike']) , ['jack','sam']);
+module.exports = middle;
+
 

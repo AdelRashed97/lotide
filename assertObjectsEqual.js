@@ -79,29 +79,30 @@ const assertObjectsEqual = function(obj1,obj2) {
   
 };
 
+module.exports = assertObjectsEqual;
 
 // test case
 // test 1: test for perimitive values;
-const ab = { a: "1", b: "2" };
-const ba = { b: "2" , a: "1" };
-assertObjectsEqual(ab,ba);// => true
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2" , a: "1" };
+// assertObjectsEqual(ab,ba);// => true
 
-const ac = { a: "1", c: "2" };
-const ca = { c: "4" , a: "1" };
-assertObjectsEqual(ac,ca); // => false
+// const ac = { a: "1", c: "2" };
+// const ca = { c: "4" , a: "1" };
+// assertObjectsEqual(ac,ca); // => false
 
-const abc = { a: "1", b: "2", c: "3" };
-assertObjectsEqual(ab,abc); // => false
+// const abc = { a: "1", b: "2", c: "3" };
+// assertObjectsEqual(ab,abc); // => false
 
 
-// test 2: test for array values;
+// // test 2: test for array values;
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertObjectsEqual(cd, dc); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertObjectsEqual(cd, dc); // => true
 
-const dc2 = { d: ["5", 3], c: "1" };
-assertObjectsEqual(cd, dc2); // => false
+// const dc2 = { d: ["5", 3], c: "1" };
+// assertObjectsEqual(cd, dc2); // => false
 
-const cd3 = { d: "1", c: ["2", 3, 4] };
-assertObjectsEqual(cd, cd3); // => false
+// const cd3 = { d: "1", c: ["2", 3, 4] };
+// assertObjectsEqual(cd, cd3); // => false

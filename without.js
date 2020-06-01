@@ -36,18 +36,20 @@ const without = function(sourceArry,itemsToRemove) {
     return outArry;
   }
 };
-// test case
-assertArraysEqual(without([1, 2, 3],[]), [1, 2, 3]); // => should PASS
-assertArraysEqual(without([1, 2, 3],[2]) ,[1,3]); // => should pass
-assertArraysEqual(without([1, 2, 3],[2,3]), [1]); // => should PASS
 
-let numbers = [1,2,3,9,8,9,2,9,1];
-let numbers2 = without(numbers,[1,2,9]);
-console.log(numbers);
-console.log(numbers2);
-assertArraysEqual(numbers,[1,2,3,9,8,9,2,9,1]);// should pass
+module.exports = without;
+// // test case
+// assertArraysEqual(without([1, 2, 3],[]), [1, 2, 3]); // => should PASS
+// assertArraysEqual(without([1, 2, 3],[2]) ,[1,3]); // => should pass
+// assertArraysEqual(without([1, 2, 3],[2,3]), [1]); // => should PASS
 
-const words = ["hello", "world", "lighthouse"];
-const words2 = without(words, ["lighthouse"]);
-console.log(words);// test that without does not alter original array
-console.log(words2);
+// let numbers = [1,2,3,9,8,9,2,9,1];
+// let numbers2 = without(numbers,[1,2,9]);
+// console.log(numbers);
+// console.log(numbers2);
+// assertArraysEqual(numbers,[1,2,3,9,8,9,2,9,1]);// should pass
+
+// const words = ["hello", "world", "lighthouse"];
+// const words2 = without(words, ["lighthouse"]);
+// console.log(words);// test that without does not alter original array
+// console.log(words2);

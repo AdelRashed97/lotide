@@ -1,10 +1,17 @@
-const assertEqual = require('./assertEqual');
-const head = require('./head');
+const assert = require("chai").assert;
+
+const head = require('../head');
 
 
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([5]), 5);
-assertEqual(head([ "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([]), 5);
-assertEqual(head([5,6]), "Hello");
+describe("test head.js",function () {
+  it("should return undefined if input is empty array",function() {
+    const result = head([]);
+    assert.isUndefined(result);
+  });
+
+  it("should return the first element of an array if input is non-empty array",function() {
+    const result = head([5,6,7,8]);
+    const expectedResult = 5;
+    assert.equal(result,expectedResult);
+  });
+});
